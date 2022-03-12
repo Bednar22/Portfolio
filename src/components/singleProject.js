@@ -1,20 +1,33 @@
-import { Card, CardHeader, CardContent, Typography, IconButton } from '@mui/material';
+import { Card, CardHeader, CardContent, Typography, IconButton, Tooltip, Link } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
-const SingleProject = (props) => {
+const SingleProject = ({ title, description, gitLink, herokuLink }) => {
     return (
         <>
             <Card>
                 <CardHeader
-                    title={props.title}
+                    title={title}
                     action={
-                        <IconButton>
-                            <GitHubIcon fontSize='large' />
-                        </IconButton>
+                        <>
+                            <Tooltip title='App demo' disableInteractive>
+                                <Link href={herokuLink}>
+                                    <IconButton>
+                                        <OpenInBrowserIcon fontSize='large' />
+                                    </IconButton>
+                                </Link>
+                            </Tooltip>
+                            <Tooltip title='Github repository' disableInteractive>
+                                <Link href={gitLink}>
+                                    <IconButton>
+                                        <GitHubIcon fontSize='large' />
+                                    </IconButton>
+                                </Link>
+                            </Tooltip>
+                        </>
                     }
                 ></CardHeader>
                 <CardContent>
-                    <Typography>{props.description}</Typography>
+                    <Typography>{description}</Typography>
                 </CardContent>
             </Card>
         </>
