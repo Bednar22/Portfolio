@@ -31,12 +31,13 @@ const Projects = () => {
             <Grid container spacing={2} justifyContent='center'>
                 {projects.map((item) => {
                     return (
-                        <Grid item xs={8} md={8}>
+                        <Grid item xs={8} md={10} xl={8}>
                             <SingleProject
                                 title={item.title}
                                 description={item.description}
                                 gitLink={item.gitLink}
                                 herokuLink={item.herokuLink}
+                                tags={item.tags}
                             ></SingleProject>
                         </Grid>
                     );

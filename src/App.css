@@ -43,37 +43,62 @@
     justify-content: space-between;
 }
 
-#content {
-    position: relative;
-}
-#content:before,
-#content:after,
-#content > :first-child:before,
-#content > :first-child:after {
+.active::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 0;
     position: absolute;
-    content: ' ';
-    width: 80px;
-    height: 80px;
-    border-color: red; /* or whatever colour */
-    border-style: solid; /* or whatever style */
+    background: #00239cff;
+    transition: width 0.2s ease 0s, left 0.2s ease 0s;
+    width: 100%;
 }
-#content:before {
-    top: 0;
-    left: 0;
-    border-width: 1px 0 0 1px;
+
+.BorderCorner_wrap {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
-#content:after {
-    top: 0;
-    right: 0;
-    border-width: 1px 1px 0 0;
+.BorderCorner {
+    border: 2px solid #00239cff;
+    display: inline-block;
+    margin: 25px auto;
+    padding: 25px;
+    position: relative;
+    min-width: auto;
 }
-#content > :first-child:before {
-    bottom: 0;
-    right: 0;
-    border-width: 0 1px 1px 0;
+.bordercorner-inside {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    width: 500px;
+    min-width: 300px;
 }
-#content > :first-child:after {
-    bottom: 0;
-    left: 0;
-    border-width: 0 0 1px 1px;
+.BorderCorner::before,
+.BorderCorner::after {
+    content: '';
+    position: absolute;
+    background: white;
+}
+
+.BorderCorner::before {
+    width: calc(100% + 50px + 4px - 120px);
+    height: calc(100% + 4px);
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.BorderCorner::after {
+    height: calc(100% + 50px + 4px - 120px);
+    width: calc(100% + 4px);
+    left: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
 }

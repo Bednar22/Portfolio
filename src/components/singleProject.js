@@ -1,10 +1,10 @@
-import { Card, CardHeader, CardContent, Typography, IconButton, Tooltip, Link } from '@mui/material';
+import { Card, CardHeader, CardContent, Typography, IconButton, Tooltip, Link, Chip } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
-const SingleProject = ({ title, description, gitLink, herokuLink }) => {
+const SingleProject = ({ title, description, gitLink, herokuLink, tags }) => {
     return (
         <>
-            <Card>
+            <Card sx={{ mb: 2 }}>
                 <CardHeader
                     title={title}
                     action={
@@ -29,6 +29,13 @@ const SingleProject = ({ title, description, gitLink, herokuLink }) => {
                 <CardContent>
                     <Typography>{description}</Typography>
                 </CardContent>
+                {tags.map((item) => {
+                    return (
+                        <>
+                            <Chip sx={{ mx: 1, mb: 2, mt: 2 }} label={item} />
+                        </>
+                    );
+                })}
             </Card>
         </>
     );

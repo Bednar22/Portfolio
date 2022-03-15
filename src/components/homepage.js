@@ -1,14 +1,26 @@
 import '../App.css';
-
+import myphoto from '../ja.jpeg';
+import { Avatar, Container, Grid, Paper, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 const Homepage = () => {
     return (
         <>
-            <svg viewBox='0 0 100 100' width='50%'>
-                <path d='M25,2 L2,2 L2,25' fill='none' stroke='black' stroke-width='3' />
-                <path d='M2,75 L2,98 L25,98' fill='none' stroke='black' stroke-width='3' />
-                <path d='M75,98 L98,98 L98,75' fill='none' stroke='black' stroke-width='3' />
-                <path d='M98,25 L98,2 L75,2' fill='none' stroke='black' stroke-width='3' />
-            </svg>
+            <Box className='BorderCorner_wrap'>
+                <Box className='BorderCorner'>
+                    <Box className='bordercorner-inside' elevation={0}>
+                        <Grid container>
+                            <Grid xs={8}>
+                                <Typography variant='h2'>Hi,I am Maciek!</Typography>
+                            </Grid>
+                            <Grid xs={4}>
+                                <Avatar sx={{ width: 200, height: 200 }} src={myphoto} alt='me' />
+                            </Grid>
+
+                            {/* <img src={myphoto} alt='me' /> */}
+                        </Grid>
+                    </Box>
+                </Box>
+            </Box>
         </>
     );
 };
