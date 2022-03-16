@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardContent, Typography, IconButton, Tooltip, Link, Chip } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
+import { grey } from '@mui/material/colors';
 const SingleProject = ({ title, description, gitLink, herokuLink, tags }) => {
     return (
         <>
@@ -12,14 +13,14 @@ const SingleProject = ({ title, description, gitLink, herokuLink, tags }) => {
                             <Tooltip title='App demo' disableInteractive>
                                 <Link href={herokuLink}>
                                     <IconButton>
-                                        <OpenInBrowserIcon fontSize='large' />
+                                        <OpenInBrowserIcon sx={{ color: grey[900] }} fontSize='large' />
                                     </IconButton>
                                 </Link>
                             </Tooltip>
                             <Tooltip title='Github repository' disableInteractive>
                                 <Link href={gitLink}>
                                     <IconButton>
-                                        <GitHubIcon fontSize='large' />
+                                        <GitHubIcon sx={{ color: grey[900] }} fontSize='large' />
                                     </IconButton>
                                 </Link>
                             </Tooltip>

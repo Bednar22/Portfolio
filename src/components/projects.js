@@ -1,6 +1,6 @@
 import SingleProject from './singleProject';
-import { Grid } from '@mui/material';
-
+import { Grid, Typography, Stack, Paper } from '@mui/material';
+import graphic from '../together.png';
 const projects = [
     {
         title: 'Training Planner',
@@ -28,7 +28,18 @@ const projects = [
 const Projects = () => {
     return (
         <>
-            <Grid container spacing={2} justifyContent='center'>
+            <Grid container justifyContent='center' rowSpacing={{ xs: 2, sm: 2, md: 3, xl: 3 }}>
+                <Grid xs={8} sm={8} md={10} xl={8}>
+                    <Paper sx={{ p: 3 }}>
+                        <Stack direction='row'>
+                            <Typography variant='h4' sx={{ mr: 2 }}>
+                                Here are some samples of my projects
+                            </Typography>
+                            <img width={500} height={250} src={graphic} alt='projects' />
+                        </Stack>
+                    </Paper>
+                </Grid>
+
                 {projects.map((item) => {
                     return (
                         <Grid item xs={8} md={10} xl={8}>

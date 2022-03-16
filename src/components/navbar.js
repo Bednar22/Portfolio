@@ -1,12 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import { Box } from '@mui/material';
 import '../App.css';
 
 const Navbar = () => {
     return (
         <>
-            <div className='menu'>
+            <Box className='menu' sx={{ mb: 8 }}>
                 <img className='menu-image' src='../mblogo.png' />
-                <div>
+                <Box>
                     <NavLink className='menu-button' to='/'>
                         Home
                     </NavLink>
@@ -16,8 +17,8 @@ const Navbar = () => {
                     <NavLink className='menu-button' to='projects'>
                         Projects
                     </NavLink>
-                </div>
-            </div>
+                </Box>
+            </Box>
         </>
     );
 };
