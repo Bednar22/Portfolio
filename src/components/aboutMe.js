@@ -1,18 +1,96 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import { Divider, Grid, List, ListItem, ListItemText, ListItemIcon, ListSubheader, Paper } from '@mui/material';
+import CircleIcon from '@mui/icons-material/Circle';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { grey } from '@mui/material/colors';
 const AboutMe = (props) => {
     return (
         <>
-            <h1>ABOUT</h1>
-            <Grid container>
-                <Grid item xs={8} md={4} xl={4} style={{ border: '2px solid red' }}>
-                    Technologies
+            <Grid container direction='row' spacing={2}>
+                <Grid item xs={8} md={4} xl={4}>
+                    <Paper>
+                        <List
+                            subheader={
+                                <ListSubheader sx={{ fontSize: 20, color: grey[900] }} component='div'>
+                                    Tech skills
+                                </ListSubheader>
+                            }
+                        >
+                            <ListItem>
+                                <ListItemIcon>
+                                    <FiberManualRecordIcon
+                                        sx={{ color: grey[900] }}
+                                        fontSize='small'
+                                    ></FiberManualRecordIcon>
+                                </ListItemIcon>
+                                <ListItemText>First</ListItemText>
+                            </ListItem>
+                        </List>
+                    </Paper>
                 </Grid>
-                <Grid item xs={8} md={4} xl={4} style={{ border: '2px solid red' }}>
-                    Other skills
+                {/* <Divider orientation='vertical' flexItem></Divider> */}
+                <Grid item xs={8} md={4} xl={4}>
+                    <Paper>
+                        <List
+                            subheader={
+                                <ListSubheader sx={{ fontSize: 20, color: grey[900] }} component='div'>
+                                    Other skills
+                                </ListSubheader>
+                            }
+                        >
+                            <ListItem>
+                                <ListItemIcon>
+                                    <FiberManualRecordIcon
+                                        sx={{ color: grey[900] }}
+                                        fontSize='small'
+                                    ></FiberManualRecordIcon>
+                                </ListItemIcon>
+                                <ListItemText>Second</ListItemText>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <FiberManualRecordIcon
+                                        sx={{ color: grey[900] }}
+                                        fontSize='small'
+                                    ></FiberManualRecordIcon>
+                                </ListItemIcon>
+                                <ListItemText>Second</ListItemText>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <FiberManualRecordIcon
+                                        sx={{ color: grey[900] }}
+                                        fontSize='small'
+                                    ></FiberManualRecordIcon>
+                                </ListItemIcon>
+                                <ListItemText>Second</ListItemText>
+                            </ListItem>
+                        </List>
+                    </Paper>
                 </Grid>
-                <Grid item xs={8} md={4} xl={4} style={{ border: '2px solid red' }}>
-                    Hobbys
+                {/* <Divider orientation='vertical' flexItem></Divider> */}
+                <Grid item xs={8} md={4} xl={4}>
+                    <Paper>
+                        <List
+                            subheader={
+                                <>
+                                    <ListSubheader sx={{ fontSize: 20, color: grey[900] }} component='div'>
+                                        Hobbys
+                                    </ListSubheader>
+                                </>
+                            }
+                        >
+                            <ListItem>
+                                <ListItemIcon>
+                                    <FiberManualRecordIcon
+                                        sx={{ color: grey[900] }}
+                                        fontSize='small'
+                                    ></FiberManualRecordIcon>
+                                </ListItemIcon>
+                                <ListItemText>Third</ListItemText>
+                            </ListItem>
+                        </List>
+                    </Paper>
                 </Grid>
             </Grid>
         </>

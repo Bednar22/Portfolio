@@ -67,7 +67,7 @@
     margin: 25px auto;
     padding: 25px;
     position: relative;
-    min-width: auto;
+    /* min-width: auto; */
 }
 .bordercorner-inside {
     position: relative;
@@ -75,8 +75,6 @@
     margin: 0;
     padding: 0;
     z-index: 5;
-    width: 500px;
-    min-width: 300px;
 }
 .BorderCorner::before,
 .BorderCorner::after {
