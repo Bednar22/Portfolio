@@ -1,13 +1,15 @@
-import { NavLink } from 'react-router-dom';
-import { Box } from '@mui/material';
+import { NavLink, Link } from 'react-router-dom';
+import { Box, Stack } from '@mui/material';
 import '../App.css';
 
 const Navbar = () => {
     return (
         <>
             <Box className='menu' sx={{ mb: 8 }}>
-                <img className='menu-image' src='../mblogo.png' />
-                <Box>
+                <Link to='/'>
+                    <img className='menu-image' src='../mblogo.png' />
+                </Link>
+                <Stack direction='row'>
                     <NavLink className='menu-button' to='/'>
                         Home
                     </NavLink>
@@ -17,7 +19,7 @@ const Navbar = () => {
                     <NavLink className='menu-button' to='projects'>
                         Projects
                     </NavLink>
-                </Box>
+                </Stack>
             </Box>
         </>
     );

@@ -36,7 +36,6 @@ const Homepage = () => {
                                     </Stack>
                                 </Grid>
                                 <Grid sm={6} md={4}>
-                                    {/* <Avatar sx={{ width: 1 / 1 }} src={myphoto} alt='me' /> */}
                                     <img
                                         src={myphoto}
                                         width='200vw'

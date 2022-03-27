@@ -1,5 +1,18 @@
 /* colors: blue: #00239CFF , #00539CFF, #0063B2FF, #00539CFF */
 /* red: #E10600FF,  #990011FF,   #ED2B33FF,  #FC766AFF */
+.projects-image {
+    width: 55vw;
+}
+
+.projects-mobile {
+    width: 120vw;
+}
+
+.color-text {
+    color: #00239cff;
+    font-weight: 500;
+}
+
 .menu-image {
     margin-left: 20px;
     margin-right: 20px;

@@ -1,48 +1,89 @@
+import { useState } from 'react';
 import SingleProject from './singleProject';
-import { Grid, Typography, Stack, Paper } from '@mui/material';
+import { Grid, Typography, Stack, Paper, Card, Container, Box, Divider } from '@mui/material';
 import graphic from '../together.png';
+import '../App.css';
+
+import useWindowDimensions from './windowDimension';
+import { useEffect } from 'react';
 const projects = [
     {
         title: 'Training Planner',
-        description: 'Krotki opis',
+        description:
+            'Project was created in colaboration with Nokia during 6th semester of engineering studies. Main goal of app is to easly manage trainings in Nokia company. We worked as a team of 5 people in Scrum methodology and used CI/CD practices. ',
         gitLink: ' https://github.com/nokia-wroclaw/innovativeproject-training-planner',
         herokuLink: 'link2',
         tags: ['Javascript', 'React', 'Express', 'MongoDB', 'MaterializeCSS', 'Docker', 'CD/CI'],
     },
     {
         title: 'BikeShop',
-        description: 'Krotki opis',
+        description:
+            'BikeShop is web application created as my engineering project to pass final exam. I was inspired by working in a small warehouse and wanted to create online shop with management panel. Main goal is to optimize process of gathering and packing products by using some algotithms.',
         gitLink: 'https://github.com/Bednar22/Inzynierka',
         herokuLink: 'link2',
         tags: ['Javascript', 'React', 'Express', 'MongoDB', 'Material-UI', 'Algorithms'],
     },
     {
         title: 'Germe',
-        description: 'Germe is a small project, that was created to ',
+        description:
+            'Germe is a small, individual project, that was created to improve my coding and language skills. I wanted to make appearance using pure CSS and learn some about styling and transitions. It is still in development and I am going to finish this project soon. ',
         gitLink: 'https://github.com/Bednar22/Germe',
         herokuLink: 'link2',
         tags: ['Javascript', 'React', 'CSS'],
     },
+    {
+        title: 'png-is-my-favourite-file-type',
+        description:
+            'Project created with my friend during "E-media" course. It should enable user to exctract/delete metadata from a .png file, encrypt file using RSA technique. ',
+        gitLink: 'https://github.com/Bednar22/Germe',
+        herokuLink: '',
+        tags: ['Python', 'RSA encryption'],
+    },
 ];
 
 const Projects = () => {
+    const { height2, width2 } = useWindowDimensions();
+
     return (
         <>
-            <Grid container justifyContent='center' rowSpacing={{ xs: 2, sm: 2, md: 3, xl: 3 }}>
-                <Grid xs={8} sm={8} md={10} xl={8}>
-                    <Paper sx={{ p: 3 }}>
-                        <Stack direction='row'>
-                            <Typography variant='h4' sx={{ mr: 2 }}>
-                                Here are some samples of my projects
+            <Container maxWidth='lg'>
+                <Paper sx={{ p: 4, mb: 5, pb: 1 }}>
+                    <Stack
+                        direction={{ xs: 'column', sm: 'column', md: 'row' }}
+                        spacing={{ xs: 2, sm: 2, md: 4 }}
+                        justifyContent='center'
+                        alignItems='center'
+                        sx={{ mb: 5 }}
+                    >
+                        <Box sx={{ mb: 2 }}>
+                            <Typography variant='h5'>Here you can find some examples of my projects</Typography>
+                            <Divider sx={{ mb: 2, mt: 2 }}></Divider>
+                            <Typography variant='p'>
+                                I feel most comfortable using <span className='color-text'>MERN stack</span> in my
+                                applictions - <span className='color-text'>React</span> library to create front-end,{' '}
+                                <span className='color-text'>Node</span> with{' '}
+                                <span className='color-text'>express</span> to create back-end and{' '}
+                                <span className='color-text'>MongoDB</span> as a database. Apart from these web
+                                technologies I tried <span className='color-text'>Angular</span> and{' '}
+                                <span className='color-text'>.NET</span> but do not use them on daily basis. During my
+                                studies I also learned <span className='color-text'>C++</span> and{' '}
+                                <span className='color-text'>Python</span>.
                             </Typography>
-                            <img width={500} height={250} src={graphic} alt='projects' />
-                        </Stack>
-                    </Paper>
-                </Grid>
-
+                        </Box>
+                        <Box>
+                            {width2 < 500 ? (
+                                <img className='projects-mobile' src={graphic} alt='projects' /> //mobile
+                            ) : (
+                                <img className='projects-image' src={graphic} alt='projects' /> //dekstop
+                            )}
+                        </Box>
+                    </Stack>
+                </Paper>
+            </Container>
+            <Grid container justifyContent='center' rowSpacing={{ xs: 2, sm: 2, md: 3, xl: 3 }}>
                 {projects.map((item) => {
                     return (
-                        <Grid item xs={8} md={10} xl={8}>
+                        <Grid item sm={10} xs={10} md={9} xl={8}>
                             <SingleProject
                                 title={item.title}
                                 description={item.description}

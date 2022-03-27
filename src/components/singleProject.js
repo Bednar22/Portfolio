@@ -5,25 +5,29 @@ import { grey } from '@mui/material/colors';
 const SingleProject = ({ title, description, gitLink, herokuLink, tags }) => {
     return (
         <>
-            <Card sx={{ mb: 2 }}>
+            <Card sx={{ mb: 2, p: 2 }}>
                 <CardHeader
                     title={title}
                     action={
                         <>
-                            <Tooltip title='App demo' disableInteractive>
-                                <Link href={herokuLink}>
-                                    <IconButton>
-                                        <OpenInBrowserIcon sx={{ color: grey[900] }} fontSize='large' />
-                                    </IconButton>
-                                </Link>
-                            </Tooltip>
-                            <Tooltip title='Github repository' disableInteractive>
-                                <Link href={gitLink}>
-                                    <IconButton>
-                                        <GitHubIcon sx={{ color: grey[900] }} fontSize='large' />
-                                    </IconButton>
-                                </Link>
-                            </Tooltip>
+                            {herokuLink && (
+                                <Tooltip title='App demo' disableInteractive>
+                                    <Link href={herokuLink}>
+                                        <IconButton>
+                                            <OpenInBrowserIcon sx={{ color: grey[900] }} fontSize='large' />
+                                        </IconButton>
+                                    </Link>
+                                </Tooltip>
+                            )}
+                            {gitLink && (
+                                <Tooltip title='Github repository' disableInteractive>
+                                    <Link href={gitLink}>
+                                        <IconButton>
+                                            <GitHubIcon sx={{ color: grey[900] }} fontSize='large' />
+                                        </IconButton>
+                                    </Link>
+                                </Tooltip>
+                            )}
                         </>
                     }
                 ></CardHeader>
@@ -33,7 +37,7 @@ const SingleProject = ({ title, description, gitLink, herokuLink, tags }) => {
                 {tags.map((item) => {
                     return (
                         <>
-                            <Chip sx={{ mx: 1, mb: 2, mt: 2 }} label={item} />
+                            <Chip sx={{ mx: 1, mb: 1, mt: 1 }} label={item} />
                         </>
                     );
                 })}
