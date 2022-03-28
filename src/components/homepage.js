@@ -1,10 +1,12 @@
 import '../App.css';
 import myphoto from '../japngciete.png';
-import { Avatar, Container, Grid, Paper, Typography, Stack } from '@mui/material';
+import { Avatar, Container, Grid, Paper, Typography, Stack, Link as MaterialLink } from '@mui/material';
 import { Box } from '@mui/system';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { Link } from 'react-router-dom';
 import useWindowDimensions from './windowDimension';
+import { Socials } from './socials';
+import { grey, blue } from '@mui/material/colors';
+
 const Homepage = () => {
     const { height, width } = useWindowDimensions();
     return (
@@ -27,8 +29,13 @@ const Homepage = () => {
                                                 <Typography align='left'>
                                                     I am interested in creating web applications. I have solid
                                                     theoretical and practical foundations in HTML, CSS and
-                                                    Javascript(especially React). You can find more informations HERE.
+                                                    Javascript(especially React). You can find more informations{' '}
+                                                    <Link to='about' className='home-link'>
+                                                        here
+                                                    </Link>
+                                                    .
                                                 </Typography>
+                                                <Socials></Socials>
                                             </>
                                         ) : (
                                             ''
@@ -38,7 +45,7 @@ const Homepage = () => {
                                 <Grid sm={6} md={4}>
                                     <img
                                         src={myphoto}
-                                        width='200vw'
+                                        width='250vw'
                                         alt='ja'
                                         style={{ borderRadius: '50%' }}
                                         sx={{ pb: 1 / 5 }}
@@ -46,17 +53,22 @@ const Homepage = () => {
                                 </Grid>
                                 {width <= 500 ? (
                                     <>
-                                        <Grid item sm={10}>
+                                        <Grid item sm={10} sx={{ mt: 2 }}>
                                             <Stack spacing={1}>
-                                                <Typography align='left'>
+                                                <Typography align='justify'>
                                                     I am studying Computer Science at the Wrocław University of Science
                                                     and Technology
                                                 </Typography>
-                                                <Typography align='left'>
+                                                <Typography align='justify'>
                                                     I am interested in creating web applications. I have solid
-                                                    theoretical and practical foundations in HTML, CSS and
-                                                    Javascript(especially React). You can find more informations HERE.
+                                                    theoretical and practical foundations in HTML, CSS and Javascript
+                                                    (especially React). More about me{' '}
+                                                    <Link sx={{ color: blue[800], decoration: 'none' }} to='about'>
+                                                        here
+                                                    </Link>
+                                                    .
                                                 </Typography>
+                                                <Socials></Socials>
                                             </Stack>
                                         </Grid>
                                     </>
@@ -68,9 +80,6 @@ const Homepage = () => {
                     </Box>
                 </Box>
             </Container>
-            {/* <h1>
-                width: {width} ~ height: {height}
-            </h1> */}
         </>
     );
 };

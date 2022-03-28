@@ -1,5 +1,11 @@
 /* colors: blue: #00239CFF , #00539CFF, #0063B2FF, #00539CFF */
 /* red: #E10600FF,  #990011FF,   #ED2B33FF,  #FC766AFF */
+.home-link {
+    text-decoration: none;
+    color: #00239cff;
+    font-weight: 550;
+}
+
 .projects-image {
     width: 55vw;
 }

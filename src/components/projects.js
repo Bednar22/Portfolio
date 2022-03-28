@@ -3,9 +3,8 @@ import SingleProject from './singleProject';
 import { Grid, Typography, Stack, Paper, Card, Container, Box, Divider } from '@mui/material';
 import graphic from '../together.png';
 import '../App.css';
-
 import useWindowDimensions from './windowDimension';
-import { useEffect } from 'react';
+
 const projects = [
     {
         title: 'Training Planner',
@@ -35,7 +34,7 @@ const projects = [
         title: 'png-is-my-favourite-file-type',
         description:
             'Project created with my friend during "E-media" course. It should enable user to exctract/delete metadata from a .png file, encrypt file using RSA technique. ',
-        gitLink: 'https://github.com/Bednar22/Germe',
+        gitLink: 'https://github.com/starmarek/png-is-my-favourite-file-type',
         herokuLink: '',
         tags: ['Python', 'RSA encryption'],
     },
