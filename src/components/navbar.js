@@ -7,7 +7,7 @@ const Navbar = () => {
         <>
             <Box className='menu' sx={{ mb: 8 }}>
                 <Link to='/'>
-                    <img className='menu-image' src='../mblogo.png' />
+                    <img className='menu-image' src='../mblogo.png' alt='logo' />
                 </Link>
                 <Stack direction='row'>
                     <NavLink className='menu-button' to='/'>

@@ -1,28 +1,53 @@
-import React from 'react';
-import { Card, CardHeader, CardContent, Grid, List, Divider, ListSubheader, Paper, Typography } from '@mui/material';
+import React, { useEffect, useState, useRef } from 'react';
+import { Card, CardHeader, CardContent, Grid, List, ListSubheader, Paper, Typography } from '@mui/material';
 import { ListElement } from './listElement';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { grey } from '@mui/material/colors';
+import useWindowDimensions from './windowDimension';
 
 const techSkills = [
     {
         title: 'HTML and CSS',
-        subtitle: 'hehe',
+        subtitle: '',
     },
     {
-        title: 'HTML and CSS',
-        subtitle: '',
+        title: 'Javascript (React, Express)',
+        subtitle:
+            'Asynchronous javascript, JSX; React hooks; frameworks-Material UI, Materialize CSS; REST api in express',
+    },
+    {
+        title: 'Git',
+        subtitle: 'Everyday use in individual projects and experience in small groups of 4-5 people',
+    },
+    {
+        title: 'Databases',
+        subtitle: 'Most experience with MongoDB, but also used a bit relational databases',
+    },
+    {
+        title: 'Python',
+        subtitle: 'Fundamental knowledge, learning Django',
     },
 ];
 
 const otherSkills = [
     {
         title: 'English',
-        subtitle: 'I am comfortable with speaking and writing (B2 confirmed)',
+        subtitle: 'Fluent in spoken and written English (B2 confirmed)',
     },
     {
         title: 'German',
-        subtitle: 'I know well basics, understand most of it but I am not best speaker/writer ',
+        subtitle: 'Good basic knowlegde but not comfortable in speaking and writing yet',
+    },
+    {
+        title: 'Problem solving',
+        subtitle: '',
+    },
+    {
+        title: 'Effective communication',
+        subtitle: '',
+    },
+    {
+        title: 'Teamwork',
+        subtitle: '',
     },
 ];
 
@@ -31,9 +56,27 @@ const hobbys = [
         title: 'Sport',
         subtitle: 'Running, football and all other kinds of sport',
     },
+    {
+        title: 'Games',
+        subtitle: 'As a competetive person I like playing board and computer games',
+    },
+    {
+        title: 'Movies and TV series',
+        subtitle: 'Especially fantasy/thrilers/mystery',
+    },
 ];
 
 const AboutMe = (props) => {
+    const { height, width } = useWindowDimensions();
+    const [ph, setPh] = useState();
+    const ref = useRef(null);
+
+    useEffect(() => {
+        if (width > 500) {
+            setPh(ref.current.clientHeight);
+        }
+    }, [width]);
+
     return (
         <>
             <Card sx={{ mb: 4 }}>
@@ -52,10 +95,10 @@ const AboutMe = (props) => {
             </Card>
             <Grid container direction='row' spacing={2} justifyContent='center'>
                 <Grid item xs={11} md={4} xl={4}>
-                    <Paper sx={{ mb: 2 }}>
+                    <Paper ref={ref} sx={{ mb: 4 }}>
                         <List
                             subheader={
-                                <ListSubheader sx={{ fontSize: 20, color: grey[900] }} component='div'>
+                                <ListSubheader sx={{ fontSize: 20, color: grey[900], fontWeight: 700 }} component='div'>
                                     Tech skills
                                 </ListSubheader>
                             }
@@ -67,11 +110,11 @@ const AboutMe = (props) => {
                     </Paper>
                 </Grid>
                 {/* <Divider orientation='vertical' flexItem></Divider> */}
-                <Grid item xs={8} md={4} xl={4}>
-                    <Paper sx={{ mb: 2 }}>
+                <Grid item xs={11} md={4} xl={4}>
+                    <Paper sx={{ mb: 2, height: ph }}>
                         <List
                             subheader={
-                                <ListSubheader sx={{ fontSize: 20, color: grey[900] }} component='div'>
+                                <ListSubheader sx={{ fontSize: 20, color: grey[900], fontWeight: 700 }} component='div'>
                                     Other skills
                                 </ListSubheader>
                             }
@@ -83,12 +126,15 @@ const AboutMe = (props) => {
                     </Paper>
                 </Grid>
                 {/* <Divider orientation='vertical' flexItem></Divider> */}
-                <Grid item xs={8} md={4} xl={4}>
-                    <Paper sx={{ mb: 2 }}>
+                <Grid item xs={11} md={4} xl={4}>
+                    <Paper sx={{ mb: 2, height: ph }}>
                         <List
                             subheader={
                                 <>
-                                    <ListSubheader sx={{ fontSize: 20, color: grey[900] }} component='div'>
+                                    <ListSubheader
+                                        sx={{ fontSize: 20, color: grey[900], fontWeight: 700 }}
+                                        component='div'
+                                    >
                                         Hobbys
                                     </ListSubheader>
                                 </>

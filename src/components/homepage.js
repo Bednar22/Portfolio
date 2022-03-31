@@ -1,11 +1,11 @@
 import '../App.css';
 import myphoto from '../japngciete.png';
-import { Avatar, Container, Grid, Paper, Typography, Stack, Link as MaterialLink } from '@mui/material';
+import { Container, Grid, Typography, Stack } from '@mui/material';
 import { Box } from '@mui/system';
 import { Link } from 'react-router-dom';
 import useWindowDimensions from './windowDimension';
 import { Socials } from './socials';
-import { grey, blue } from '@mui/material/colors';
+import { blue } from '@mui/material/colors';
 
 const Homepage = () => {
     const { height, width } = useWindowDimensions();
@@ -16,7 +16,7 @@ const Homepage = () => {
                     <Box className='BorderCorner'>
                         <Box className='bordercorner-inside' p={2}>
                             <Grid container direction='row' textAlign='center' justifyContent='center'>
-                                <Grid sm={6} md={8}>
+                                <Grid item sm={6} md={8}>
                                     <Stack spacing={2}>
                                         <Typography variant='h3'>Hi, I am Maciek!</Typography>
 
@@ -42,7 +42,7 @@ const Homepage = () => {
                                         )}
                                     </Stack>
                                 </Grid>
-                                <Grid sm={6} md={4}>
+                                <Grid item sm={6} md={4}>
                                     <img
                                         src={myphoto}
                                         width='250vw'

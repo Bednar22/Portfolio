@@ -34,10 +34,10 @@ const SingleProject = ({ title, description, gitLink, herokuLink, tags }) => {
                 <CardContent>
                     <Typography>{description}</Typography>
                 </CardContent>
-                {tags.map((item) => {
+                {tags.map((item, index) => {
                     return (
                         <>
-                            <Chip sx={{ mx: 1, mb: 1, mt: 1 }} label={item} />
+                            <Chip sx={{ mx: 1, mb: 1 }} label={item} key={index} />
                         </>
                     );
                 })}

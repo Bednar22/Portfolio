@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import SingleProject from './singleProject';
-import { Grid, Typography, Stack, Paper, Card, Container, Box, Divider } from '@mui/material';
+import { Grid, Typography, Stack, Paper, Container, Box, Divider } from '@mui/material';
 import graphic from '../together.png';
 import '../App.css';
 import useWindowDimensions from './windowDimension';
@@ -9,10 +8,10 @@ const projects = [
     {
         title: 'Training Planner',
         description:
-            'Project was created in colaboration with Nokia during 6th semester of engineering studies. Main goal of app is to easly manage trainings in Nokia company. We worked as a team of 5 people in Scrum methodology and used CI/CD practices. ',
+            'Project was created in colaboration with Nokia during 6th semester of engineering studies. Main goal of app was to easly manage trainings in Nokia corporation. We worked as a team of 5 people in Scrum methodology and used CI/CD practices. ',
         gitLink: ' https://github.com/nokia-wroclaw/innovativeproject-training-planner',
         herokuLink: 'link2',
-        tags: ['Javascript', 'React', 'Express', 'MongoDB', 'MaterializeCSS', 'Docker', 'CD/CI'],
+        tags: ['Javascript', 'React', 'Express', 'MongoDB', 'Materialize CSS', 'Docker', 'CD/CI', 'Scrum'],
     },
     {
         title: 'BikeShop',
@@ -37,6 +36,14 @@ const projects = [
         gitLink: 'https://github.com/starmarek/png-is-my-favourite-file-type',
         herokuLink: '',
         tags: ['Python', 'RSA encryption'],
+    },
+    {
+        title: 'Leaser - in progress',
+        description:
+            'In this semester we started a project, that should simulate a start-up. We want to create an app that will allow people to rent or exchange things. We work in a small team of 5 people and I am responsible for front-end of the application. ',
+        gitLink: '',
+        herokuLink: '',
+        tags: ['React', 'Material-UI', '.NET', 'Scrum'],
     },
 ];
 
@@ -80,9 +87,9 @@ const Projects = () => {
                 </Paper>
             </Container>
             <Grid container justifyContent='center' rowSpacing={{ xs: 2, sm: 2, md: 3, xl: 3 }}>
-                {projects.map((item) => {
+                {projects.map((item, index) => {
                     return (
-                        <Grid item sm={10} xs={10} md={9} xl={8}>
+                        <Grid item sm={10} xs={10} md={9} xl={8} key={index}>
                             <SingleProject
                                 title={item.title}
                                 description={item.description}
