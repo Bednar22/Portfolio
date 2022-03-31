@@ -8,10 +8,7 @@ export const ListElement = ({ title, subtitle }) => {
                 <ListItemIcon>
                     <FiberManualRecordIcon sx={{ color: grey[900], fontSize: 16 }}></FiberManualRecordIcon>
                 </ListItemIcon>
-                <ListItemText
-                    primary={<Typography sx={{ fontWeight: 'bold' }}>{title}</Typography>}
-                    secondary={subtitle}
-                />
+                <ListItemText primary={<Typography>{title}</Typography>} secondary={subtitle} />
             </ListItem>
         </>
     );

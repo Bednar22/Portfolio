@@ -98,7 +98,7 @@ const AboutMe = (props) => {
                     <Paper ref={ref} sx={{ mb: 4 }}>
                         <List
                             subheader={
-                                <ListSubheader sx={{ fontSize: 20, color: grey[900], fontWeight: 700 }} component='div'>
+                                <ListSubheader sx={{ fontSize: 20, color: grey[900] }} component='div'>
                                     Tech skills
                                 </ListSubheader>
                             }
@@ -114,7 +114,7 @@ const AboutMe = (props) => {
                     <Paper sx={{ mb: 2, height: ph }}>
                         <List
                             subheader={
-                                <ListSubheader sx={{ fontSize: 20, color: grey[900], fontWeight: 700 }} component='div'>
+                                <ListSubheader sx={{ fontSize: 20, color: grey[900] }} component='div'>
                                     Other skills
                                 </ListSubheader>
                             }
@@ -131,10 +131,7 @@ const AboutMe = (props) => {
                         <List
                             subheader={
                                 <>
-                                    <ListSubheader
-                                        sx={{ fontSize: 20, color: grey[900], fontWeight: 700 }}
-                                        component='div'
-                                    >
+                                    <ListSubheader sx={{ fontSize: 20, color: grey[900] }} component='div'>
                                         Hobbys
                                     </ListSubheader>
                                 </>
