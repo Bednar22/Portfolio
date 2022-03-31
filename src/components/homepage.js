@@ -1,11 +1,12 @@
 import '../App.css';
-import myphoto from '../japngciete.png';
+import myphoto from '../jasmaller.png';
 import { Container, Grid, Typography, Stack } from '@mui/material';
 import { Box } from '@mui/system';
 import { Link } from 'react-router-dom';
 import useWindowDimensions from './windowDimension';
 import { Socials } from './socials';
 import { blue } from '@mui/material/colors';
+import '../japngciete.png';
 
 const Homepage = () => {
     const { height, width } = useWindowDimensions();
@@ -45,6 +46,7 @@ const Homepage = () => {
                                 <Grid item sm={6} md={4}>
                                     <img
                                         src={myphoto}
+                                        //src='./../japngciete.png'
                                         width='250vw'
                                         alt='ja'
                                         style={{ borderRadius: '50%' }}
