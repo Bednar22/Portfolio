@@ -12,7 +12,7 @@ const Homepage = () => {
     const { height, width } = useWindowDimensions();
     return (
         <>
-            <Container maxWidth='md'>
+            <Container maxWidth='md' sx={{ mt: -4 }}>
                 <Box className='BorderCorner_wrap'>
                     <Box className='BorderCorner'>
                         <Box className='bordercorner-inside' p={2}>
